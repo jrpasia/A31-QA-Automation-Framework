@@ -10,7 +10,7 @@ import java.time.Duration;
 public class LoginTests extends BaseTest {
 
     @Test
-    public static void LoginEmptyEmailPasswordTest () {
+    public static void LoginEmptyEmailPasswordTest() {
 
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -20,6 +20,7 @@ public class LoginTests extends BaseTest {
         Assert.assertEquals(driver.getCurrentUrl(), url);
         driver.quit();
     }
+
     @Test
     public static void LoginValidEmailPasswordTest() throws InterruptedException {
 
@@ -52,26 +53,6 @@ public class LoginTests extends BaseTest {
 
         WebElement avatar = driver.findElement(By.className("avatar"));
         Assert.assertTrue(avatar.isDisplayed());
-        driver.quit();
-    }
-
-    @Test
-
-    public static void Navigation () throws InterruptedException {
-
-        WebDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
-        String url = "https://bbb.testpro.io/";
-        driver.get(url);
-        Thread.sleep(2000);
-
-        WebElement registrationLink = driver.findElement(By.cssSelector("[id='hel']"));
-        registrationLink.click();
-
-        WebElement registrationField = driver.findElement(By.xpath("//*[@class='login-wrapper']//h2"));
-        Assert.assertTrue(registrationField.isDisplayed());
-        Thread.sleep(2000);
         driver.quit();
     }
 
