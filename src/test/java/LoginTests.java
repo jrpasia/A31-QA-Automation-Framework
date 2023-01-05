@@ -10,7 +10,7 @@ import java.time.Duration;
 public class LoginTests extends BaseTest {
 
     @Test
-    public static void LoginEmptyEmailPasswordTest() {
+    public static void loginEmptyEmailPasswordTest() {
 
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -22,7 +22,7 @@ public class LoginTests extends BaseTest {
     }
 
     @Test
-    public static void LoginValidEmailPasswordTest() throws InterruptedException {
+    public static void loginValidEmailPasswordTest() throws InterruptedException {
 
         //    Precondition: Chrome browser should be opened : DONE
         //    Step1. Open koel login page: DONE
