@@ -1,14 +1,28 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
 
-
+import java.time.Duration;
 
 
 public class BaseTest {
 
+//    public static Webdriver driver = null;
+//    public static String
+
     @BeforeSuite
     static void setupClass() {
         WebDriverManager.chromedriver().setup();
+    }
+
+//    @BeforeMethod
+//    @Parameters({"BaseURL"})
+//    public static void launchBrowser(String BaseURL) {
+//        LoginTests.driver =new ChromeDriver();
+//        LoginTests.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//        driver.get(BaseURL);
     }
 
 //    public static void login(String email, String password) {
