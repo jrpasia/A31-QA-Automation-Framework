@@ -5,6 +5,7 @@
     <parameter name="BaseURL" value="https://testpro.io"/>
     <test name="Example Test" preserve-order="false">
         <classes>
+            <class name="Homework19"/>
             <class name="Homework18"/>
             <class name="Homework17"/>
             <class name="Homework16"/>
