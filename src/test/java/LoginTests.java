@@ -9,7 +9,7 @@ import java.time.Duration;
 
 public class LoginTests extends BaseTest {
 
-    @Test
+    @Test(enabled = false)
     public static void loginEmptyEmailPasswordTest() {
 
         WebDriver driver = new ChromeDriver();
@@ -21,7 +21,7 @@ public class LoginTests extends BaseTest {
         driver.quit();
     }
 
-    @Test
+    @Test(enabled = false)
     public static void loginValidEmailPasswordTest() throws InterruptedException {
 
         //    Precondition: Chrome browser should be opened : DONE

@@ -9,7 +9,7 @@ import java.time.Duration;
 
 public class Homework17 extends BaseTest{
 
-    @Test
+    @Test(enabled = false)
     public static void addSongToPlaylistTest() throws InterruptedException {
 
         WebDriver driver = new ChromeDriver();

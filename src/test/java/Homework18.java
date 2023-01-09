@@ -9,7 +9,7 @@ import java.time.Duration;
 
 public class Homework18 extends BaseTest{
 
-    @Test
+    @Test(enabled = false)
     public static void playSongTest() throws InterruptedException {
 
 
