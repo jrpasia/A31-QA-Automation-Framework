@@ -18,12 +18,12 @@ import java.time.Duration;
 
 
 public class BaseTest {
-    public static WebDriver driver = null;
-    public static String url = null;
-    public static WebDriverWait wait = null;
-    public static FluentWait fluentWait = null;
+    static WebDriver driver = null;
+    static String url = null;
+    static WebDriverWait wait = null;
+    static FluentWait fluentWait = null;
 
-    public static ThreadLocal<WebDriver> threadDriver;
+    static ThreadLocal<WebDriver> threadDriver;
 
     @BeforeSuite
     static void setupClass() {

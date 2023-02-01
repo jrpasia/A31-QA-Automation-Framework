@@ -10,7 +10,7 @@ public class LoginTests extends BaseTest {
     @Test
     public void LoginValidEmailPasswordTest() {
 
-        LoginPage loginPage = new LoginPage(driver);
+        LoginPage loginPage = new LoginPage(getDriver());
 
         loginPage.provideEmail("jrpasia@gmail.com");
         loginPage.providePassword("B3n@iah2013");

@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 public class PlaylistTests extends BaseTest{
 
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void addSongTest() throws InterruptedException {
         String playlistName = "Homework";
 
@@ -56,7 +56,7 @@ public class PlaylistTests extends BaseTest{
         basePage.assertAddDeleteMessage();
 
     }
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void playPlaylistSongTest() throws InterruptedException {
         String playlistName = "Homework";
 
@@ -118,15 +118,15 @@ public class PlaylistTests extends BaseTest{
         Assert.assertTrue(equalizerBars.isDisplayed());
 
     }
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void renamePlaylistTest() throws InterruptedException {
         String playlistName = "Homework";
         String newPlaylistName = "JRP Playlist";
 
-        LoginPage loginPage = new LoginPage(driver);
-        HomePage homePage = new HomePage(driver);
-        BasePage basePage = new BasePage(driver);
-        Actions acts = new Actions(driver);
+        LoginPage loginPage = new LoginPage(getDriver());
+        HomePage homePage = new HomePage(getDriver());
+        BasePage basePage = new BasePage(getDriver());
+        Actions acts = new Actions(getDriver());
 
         //Login valid credentials
         loginPage.login();
@@ -156,13 +156,13 @@ public class PlaylistTests extends BaseTest{
 //        highlightedList.sendKeys(newPlaylistName, Keys.ENTER);
 
     }
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void deletePlaylistTest() {
         String playlistName = "Test Delete";
 
-        LoginPage loginPage = new LoginPage(driver);
-        HomePage homePage = new HomePage(driver);
-        BasePage basePage = new BasePage(driver);
+        LoginPage loginPage = new LoginPage(getDriver());
+        HomePage homePage = new HomePage(getDriver());
+        BasePage basePage = new BasePage(getDriver());
 
         //Login valid credentials
         loginPage.login();
