@@ -33,22 +33,25 @@ public class BaseTest {
     @BeforeMethod
     @Parameters({"BaseURL"})
     public static void launchBrowser(String BaseURL) throws MalformedURLException {
-        driver = pickBrowser(System.getProperty("browser"));
 
         threadDriver = new ThreadLocal<>();
+        driver = pickBrowser(System.getProperty("browser"));
         threadDriver.set(driver);
 
+        wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
         url = BaseURL;
         getDriver().get(url);
-        wait = new WebDriverWait(LoginTests.getDriver(), Duration.ofSeconds(20));
+
     }
     public static WebDriver getDriver() {
         return threadDriver.get();
     }
 
     @AfterMethod(enabled = true)
-    public static void closeBrowser() {LoginTests.getDriver().quit();
+    public static void closeBrowser() {
+        getDriver().quit();
         threadDriver.remove();
+
 //    public static void closeBrowser() {
 //        LoginTests.driver.quit();
     }
