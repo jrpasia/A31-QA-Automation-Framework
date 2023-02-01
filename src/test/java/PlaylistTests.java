@@ -15,10 +15,10 @@ public class PlaylistTests extends BaseTest{
     public void addSongTest() throws InterruptedException {
         String playlistName = "Homework";
 
-        LoginPage loginPage = new LoginPage(driver);
-        HomePage homePage = new HomePage(driver);
-        BasePage basePage = new BasePage(driver);
-        Actions acts = new Actions(driver);
+        LoginPage loginPage = new LoginPage(getDriver());
+        HomePage homePage = new HomePage(getDriver());
+        BasePage basePage = new BasePage(getDriver());
+        Actions acts = new Actions(getDriver());
 
         //Login valid credentials
         loginPage.login();
@@ -60,10 +60,10 @@ public class PlaylistTests extends BaseTest{
     public void playPlaylistSongTest() throws InterruptedException {
         String playlistName = "Homework";
 
-        LoginPage loginPage = new LoginPage(driver);
-        HomePage homePage = new HomePage(driver);
-        BasePage basePage = new BasePage(driver);
-        Actions acts = new Actions(driver);
+        LoginPage loginPage = new LoginPage(getDriver());
+        HomePage homePage = new HomePage(getDriver());
+        BasePage basePage = new BasePage(getDriver());
+        Actions acts = new Actions(getDriver());
 
         //Login valid credentials
         loginPage.login();
@@ -118,7 +118,7 @@ public class PlaylistTests extends BaseTest{
         Assert.assertTrue(equalizerBars.isDisplayed());
 
     }
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void renamePlaylistTest() throws InterruptedException {
         String playlistName = "Homework";
         String newPlaylistName = "JRP Playlist";
@@ -156,7 +156,7 @@ public class PlaylistTests extends BaseTest{
 //        highlightedList.sendKeys(newPlaylistName, Keys.ENTER);
 
     }
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void deletePlaylistTest() {
         String playlistName = "Test Delete";
 

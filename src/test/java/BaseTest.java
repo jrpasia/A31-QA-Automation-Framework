@@ -23,6 +23,8 @@ public class BaseTest {
     public static WebDriverWait wait = null;
     public static FluentWait fluentWait = null;
 
+    public static ThreadLocal<WebDriver> threadDriver;
+
     @BeforeSuite
     static void setupClass() {
 //        WebDriverManager.firefoxdriver().setup();
@@ -32,14 +34,23 @@ public class BaseTest {
     @Parameters({"BaseURL"})
     public static void launchBrowser(String BaseURL) throws MalformedURLException {
         driver = pickBrowser(System.getProperty("browser"));
+
+        threadDriver = new ThreadLocal<>();
+        threadDriver.set(driver);
+
         url = BaseURL;
-        driver.get(url);
-        wait = new WebDriverWait(LoginTests.driver, Duration.ofSeconds(20));
+        getDriver().get(url);
+        wait = new WebDriverWait(LoginTests.getDriver(), Duration.ofSeconds(20));
+    }
+    public static WebDriver getDriver() {
+        return threadDriver.get();
     }
 
     @AfterMethod(enabled = true)
-    public static void closeBrowser() {
-        LoginTests.driver.quit();
+    public static void closeBrowser() {LoginTests.getDriver().quit();
+        threadDriver.remove();
+//    public static void closeBrowser() {
+//        LoginTests.driver.quit();
     }
 
     private static WebDriver pickBrowser(String browser) throws MalformedURLException {
